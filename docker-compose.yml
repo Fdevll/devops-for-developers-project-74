@@ -1,11 +1,6 @@
-version: "3"
-
 services:
   app:
-    image: node:20.12.2
-    working_dir: /root
+    build: .
     volumes:
-      - ./app:/root
-    ports:
-      - "8080:8080"
-    command: make dev
+      - ./app:/app
+    command: make test
